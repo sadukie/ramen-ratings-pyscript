@@ -29,9 +29,9 @@
         <py-script>
         import pyodide
         def on_click(e):
-        e.target.innerHTML = "Tada !!! you pressed me !."
-        change_me_element = document.getElementById('change_me')
-        change_me_element.addEventListener('click', pyodide.create_proxy(on_click))
+            e.target.innerHTML = "Tada !!! you pressed me !."
+            change_me_element = document.getElementById('change_me')
+            change_me_element.addEventListener('click', pyodide.create_proxy(on_click))
         </py-script>
     </body>
 </html>
