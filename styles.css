@@ -1,0 +1,13 @@
+:root {    
+    --alternate-header-color: crimson;
+    --header-color: seagreen;
+}
+
+h1, h3, h5 {
+    color: var(--header-color);
+}
+
+h2, h4 {
+    color: var(--alternate-header-color);
+    border-bottom: 1px solid var(--alternate-header-color);
+}
