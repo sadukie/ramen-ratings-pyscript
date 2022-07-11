@@ -1,37 +1,24 @@
 <html>
-    <head>
-        <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
-        <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
-        <style>
-            h1{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            }
-            div{
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-top: 100px;
-            }
-            button{
-            background-color: Black;
-            color: white;
-            border-radius: 5px;
-            }
-        </style>
-    </head>
-    <body>
-        <h1>PyScript Events</h1>
-        <div>
-        <button id="change_me"> Press me ! </button>
-        </div>
-        <py-script>
-        import pyodide
-        def on_click(e):
-            e.target.innerHTML = "Tada !!! you pressed me !."
-            change_me_element = document.getElementById('change_me')
-            change_me_element.addEventListener('click', pyodide.create_proxy(on_click))
-        </py-script>
-    </body>
+<head>
+    <title>Read CSV with Pandas using PyScript</title>
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <!---pyodide--> 
+    <py-env>
+        - pandas
+    </py-env>
+</head>
+<body>    
+    <h1>Read CSV with Pandas using PyScript</h1>
+    <p id="csv"></p>
+    <py-script>
+        import pandas as pd 
+        from pyodide.http import open_url
+        url_content = open_url("https://raw.githubusercontent.com/sadukie/ramen-ratings-pyscript/main/ramen-ratings.csv")
+        df = pd.read_csv(url_content)
+        #print(df)        
+        csv = Element('csv')
+        csv.write(df.info())
+    </py-script>
+</body>
 </html>
