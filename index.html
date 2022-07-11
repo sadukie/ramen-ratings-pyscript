@@ -18,7 +18,7 @@
         df = pd.read_csv(url_content)
         #print(df)        
         csv = Element('csv')
-        csv.write(df.info())
+        csv.write(df.shape)
     </py-script>
 </body>
 </html>
