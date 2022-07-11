@@ -26,9 +26,13 @@
     </py-script>
     <py-script output="most_tested_chart">
         import matplotlib.pyplot as plt
-        import seaborn as sns
-        plt.hist(most_tested.Brand,alpha=.3)
-        sns.rugplot(most_tested.Brand)
+        fig, ax = plt.subplots()
+        ax.bar(most_tested.index,most_tested.Brand)
+        plt.setp(ax.get_xticklabels(),rotation=45)
+        plt.title('Brands Most Reviewed')
+        plt.xlabel('Brands')
+        plt.ylabel('Number of Reviews')
+        plt.show()
     </py-script>
 </body>
 </html>
