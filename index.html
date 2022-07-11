@@ -11,16 +11,13 @@
 </head>
 <body>    
     <h1>Read CSV with Pandas using PyScript</h1>
-    <p id="csv"></p>
-    <py-script>
+    <div id=""plot"></div>
+    <py-script output="plot">
         import pandas as pd 
         from pyodide.http import open_url
         url_content = open_url("https://raw.githubusercontent.com/sadukie/ramen-ratings-pyscript/main/ramen-ratings.csv")
         df = pd.read_csv(url_content)
-        #print(df)        
-        csv = Element('csv')
-        csv.write(df.shape)
-        csv.write(df.Brand.value_counts().nlargest(10).plot.bar())
+        df.Brand.value_counts().nlargest(10).plot.bar()
     </py-script>
 </body>
 </html>
