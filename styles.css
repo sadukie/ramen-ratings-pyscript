@@ -20,9 +20,11 @@ table {
 
 th {
     background-color: var(--table-header-background-color);
-    color: var(--table-header-color);    
+    color: var(--table-header-color);
+    border: none;
 }
 
 td {
     padding: 5px;
+    border: none;
 }
