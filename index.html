@@ -25,7 +25,12 @@
         most_tested.to_html()
     </py-script>
     <py-script output="most_tested_chart">
+        import pandas as pd 
         import matplotlib.pyplot as plt
+        from pyodide.http import open_url
+        url_content = open_url("https://raw.githubusercontent.com/sadukie/ramen-ratings-pyscript/main/ramen-ratings.csv")
+        df = pd.read_csv(url_content)
+        most_tested = df.Brand.value_counts().nlargest(10).to_frame()        
         fig, ax = plt.subplots()
         ax.bar(most_tested.index,most_tested.Brand)
         plt.setp(ax.get_xticklabels(),rotation=45)
