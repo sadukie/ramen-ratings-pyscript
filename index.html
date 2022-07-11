@@ -14,12 +14,17 @@
     <p>Playing with PyScript and <a href="https://www.kaggle.com/datasets/residentmario/ramen-ratings">the Ramen Ratings data from Kaggle</a></p>
     <h2>Brands Most Tested</h2> 
     <div id="most_tested"></div>
+    <div id="most_tested_chart"></div>
     <py-script output="most_tested">
         import pandas as pd 
         from pyodide.http import open_url
         url_content = open_url("https://raw.githubusercontent.com/sadukie/ramen-ratings-pyscript/main/ramen-ratings.csv")
         df = pd.read_csv(url_content)
-        df.Brand.value_counts().nlargest(10).to_frame().to_html()
+        most_tested = df.Brand.value_counts().nlargest(10).to_frame()
+        most_tested.to_html()
+    </py-script>
+    <py-script output="most_tested_chart">
+        most_tested.bar()
     </py-script>
 </body>
 </html>
