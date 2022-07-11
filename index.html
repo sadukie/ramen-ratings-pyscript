@@ -20,7 +20,7 @@
         #print(df)        
         csv = Element('csv')
         csv.write(df.shape)
-        df.Brand.value_counts().nlargest(10).plot.bar()
+        csv.write(df.Brand.value_counts().nlargest(10).plot.bar())
     </py-script>
 </body>
 </html>
