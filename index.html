@@ -7,6 +7,7 @@
     <py-env>
         - pandas
         - matplotlib
+        - seaborn
     </py-env>
 </head>
 <body>
@@ -24,7 +25,10 @@
         most_tested.to_html()
     </py-script>
     <py-script output="most_tested_chart">
-        most_tested.plot.bar()
+        import matplotlib.pyplot as plt
+        import seaborn as sns
+        plt.hist(most_tested.Brand,alpha=.3)
+        sns.rugplot(most_tested.Brand)
     </py-script>
 </body>
 </html>
