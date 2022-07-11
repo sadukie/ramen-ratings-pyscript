@@ -11,8 +11,10 @@
 </head>
 <body>    
     <h1>Read CSV with Pandas using PyScript</h1>
-    <div id="plot"></div>
-    <py-script output="plot">
+    <p>Playing with PyScript and <a href="https://www.kaggle.com/datasets/residentmario/ramen-ratings">the Ramen Ratings data from Kaggle</a></p>
+    <h2>Brands Most Tested</h2> 
+    <div id="most_tested"></div>
+    <py-script output="most_tested">
         import pandas as pd 
         from pyodide.http import open_url
         url_content = open_url("https://raw.githubusercontent.com/sadukie/ramen-ratings-pyscript/main/ramen-ratings.csv")
