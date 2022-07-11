@@ -19,6 +19,7 @@
         #print(df)        
         csv = Element('csv')
         csv.write(df.shape)
+        ramen_ratings.Brand.value_counts().nlargest(10).plot.bar()
     </py-script>
 </body>
 </html>
