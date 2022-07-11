@@ -1,6 +1,8 @@
 :root {    
     --alternate-header-color: crimson;
     --header-color: seagreen;
+    --table-header-background-color: dodgerblue;
+    --table-header-color: lemonchiffon;
 }
 
 h1, h3, h5 {
@@ -10,4 +12,17 @@ h1, h3, h5 {
 h2, h4 {
     color: var(--alternate-header-color);
     border-bottom: 1px solid var(--alternate-header-color);
+}
+
+table {
+    border: none;    
+}
+
+th {
+    background-color: var(--table-header-background-color);
+    color: var(--table-header-color);    
+}
+
+td {
+    padding: 5px;
 }
