@@ -1,0 +1,14 @@
+<!html>
+<html>
+    <head>
+        <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+        <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    </head>
+    <body>
+        <py-script>
+            import pandas as pd
+            ramen_ratings = pd.read_csv('ramen-ratings.csv')
+            ramen_ratings.info()
+        </py-script>
+    </body>
+</html>
