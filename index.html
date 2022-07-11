@@ -17,7 +17,7 @@
         from pyodide.http import open_url
         url_content = open_url("https://raw.githubusercontent.com/sadukie/ramen-ratings-pyscript/main/ramen-ratings.csv")
         df = pd.read_csv(url_content)
-        df.Brand.value_counts().nlargest(10).to_html()
+        df.Brand.value_counts().nlargest(10).to_frame().to_html()
     </py-script>
 </body>
 </html>
