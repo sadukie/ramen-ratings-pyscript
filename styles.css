@@ -5,6 +5,11 @@
     --table-header-color: lemonchiffon;
 }
 
+main {
+    display: flex;
+    flex-direction: row;
+}
+
 h1, h3, h5 {
     color: var(--header-color);
 }

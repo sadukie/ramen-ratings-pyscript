@@ -2,41 +2,21 @@
 <head>
     <title>Read CSV with Pandas using PyScript</title>
     <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="https://pyscript.net/releases/2023.11.1/core.css" />
     <script type="module" src="https://pyscript.net/releases/2023.11.1/core.js"></script>
-    <!---pyodide--> 
-    <py-config>
-        packages = ["matplotlib", "pandas","seaborn"]
-    </py-config>
 </head>
 <body>
+    <script type="py" src="./main.py" config="./pyscript.json"></script>
     <h1>Read CSV with Pandas using PyScript</h1>
     <p>Playing with PyScript and <a href="https://www.kaggle.com/datasets/residentmario/ramen-ratings">the Ramen Ratings data from Kaggle</a></p>
-    <h2>Brands Most Tested</h2> 
-    <div id="most_tested"></div>
-    <div id="most_tested_chart"></div>
-    <py-script output="most_tested">
-        import pandas as pd 
-        from pyodide.http import open_url
-        url_content = open_url("https://raw.githubusercontent.com/sadukie/ramen-ratings-pyscript/main/ramen-ratings.csv")
-        df = pd.read_csv(url_content)
-        most_tested = df.Brand.value_counts().nlargest(10).to_frame()
-        most_tested.to_html()
-    </py-script>
-    <py-script output="most_tested_chart">
-        import pandas as pd 
-        import matplotlib.pyplot as plt
-        from pyodide.http import open_url
-        url_content = open_url("https://raw.githubusercontent.com/sadukie/ramen-ratings-pyscript/main/ramen-ratings.csv")
-        df = pd.read_csv(url_content)
-        most_tested = df.Brand.value_counts().nlargest(10).to_frame()        
-        fig, ax = plt.subplots()
-        ax.bar(most_tested.index,most_tested.Brand)
-        plt.setp(ax.get_xticklabels(),rotation=45)
-        plt.title('Brands Most Reviewed')
-        plt.xlabel('Brands')
-        plt.ylabel('Number of Reviews')
-        plt.show()
-    </py-script>
+    <h2>Brands Most Tested</h2>
+    <fieldset>
+        <legend>Display Parts</legend>
+        <button py-click="show_most_tested_list">Load Brands Most Tested List</button>
+        <button py-click="show_most_tested_graph">Load Brands Most Tested Graph</button>
+    </fieldset>
+    <main>
+        <section id="most_tested_list"></section>
+        <section id="most_tested_graph"></section>
+    </main>
 </body>
 </html>
