@@ -1,22 +1,28 @@
 <html>
 <head>
-    <title>Read CSV with Pandas using PyScript</title>
+    <title></title>
     <link rel="stylesheet" href="styles.css" />
     <script type="module" src="https://pyscript.net/releases/2023.11.1/core.js"></script>
 </head>
 <body>
-    <script type="py" src="./main.py" config="./pyscript.json"></script>
-    <h1>Read CSV with Pandas using PyScript</h1>
-    <p>Playing with PyScript and <a href="https://www.kaggle.com/datasets/residentmario/ramen-ratings">the Ramen Ratings data from Kaggle</a></p>
-    <h2>Brands Most Tested</h2>
+    <script type="py" src="./main.py" config="./pyscript.toml"></script>
+    <h1>PyOhio 2023: PyScript Demos</h1>
     <fieldset>
-        <legend>Display Parts</legend>
-        <button py-click="show_most_tested_list">Load Brands Most Tested List</button>
-        <button py-click="show_most_tested_graph">Load Brands Most Tested Graph</button>
+        <legend>Read CSV with Pandas using PyScript</legend>
+        <p>Playing with PyScript and <a href="https://www.kaggle.com/datasets/residentmario/ramen-ratings">the Ramen Ratings data from Kaggle</a></p>
+        <p>This demo uses matplotlib, pandas, and seaborn.</p>
+        <h2>Ramen Ratings Demos</h2>
+        <fieldset>
+            <legend>Display Parts</legend>
+            <button py-click="show_most_tested_list">Load Brands Most Tested List</button>
+            <button py-click="show_most_tested_graph">Load Brands Most Tested Graph</button>
+            <button py-click="show_most_tested_seaborn">Load Seaborn Plot</button>
+        </fieldset>
+        <article>
+            <section id="most_tested_list"></section>
+            <section id="most_tested_graph"></section>
+            <section id="most_tested_seaborn"></section>
+        </article>
     </fieldset>
-    <main>
-        <section id="most_tested_list"></section>
-        <section id="most_tested_graph"></section>
-    </main>
 </body>
 </html>

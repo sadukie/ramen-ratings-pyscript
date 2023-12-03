@@ -5,7 +5,7 @@
     --table-header-color: lemonchiffon;
 }
 
-main {
+article {
     display: flex;
     flex-direction: row;
 }
