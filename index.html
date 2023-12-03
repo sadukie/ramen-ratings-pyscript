@@ -5,11 +5,9 @@
     <link rel="stylesheet" href="https://pyscript.net/releases/2023.11.1/core.css" />
     <script type="module" src="https://pyscript.net/releases/2023.11.1/core.js"></script>
     <!---pyodide--> 
-    <py-env>
-        - pandas
-        - matplotlib
-        - seaborn
-    </py-env>
+    <py-config>
+        packages = ["matplotlib", "pandas","seaborn"]
+    </py-config>
 </head>
 <body>
     <h1>Read CSV with Pandas using PyScript</h1>
